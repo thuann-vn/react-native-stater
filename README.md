@@ -2,37 +2,32 @@
 React Native Starter with Firebase + Redux + React Navigation
 
 # What's inside
-Clean and Clear Struction
-Pages: Login, Register, Forgot password,On-Boarding
-Social Login: Facebook, Google, Apple, etc...
-Multiple Language with i18Next
-React Navigation V5 with Animations
-More and More
+1. Clean and Clear Struction
+2. Firebase Auth and Database with Firebase Redux
+3. Pages: Login, Register, Forgot Password, On-Boarding
+4. Social Login: Facebook, Google, Apple, etc...
+5. Multiple Language with i18Next
+6. React Navigation V5 with Animations
+7. More and More
 
-Getting Started
+# Getting Started
 1. Clone and Install
-# Clone the repo
-git clone https://github.com/thuann-vn/react-native-starter.git
+`git clone https://github.com/thuann-vn/react-native-starter.git`
 
-# Navigate to clonned folder and Install dependencies
-cd react-native-starter && yarn install
+2. Navigate to clonned folder and Install dependencies
+`cd react-native-starter && yarn install`
 
-# Install Pods
-cd ios && pod install
-2. Open RNS in your iOS simulator
-Run this command to start the development server and to start your app on iOS simulator:
+3. Install Pods
+`cd ios && pod install`
 
-yarn run:ios
-Or, if you prefer Android:
+4. Run on IOS or Android:
+`yarn run:ios`
+`yarn run:android`
 
-yarn run:android
-That's it! Cool, right?
-
-Contributing
+# Contributing
 If you find any problems, please open an issue or submit a fix as a pull request.
 
-How can I support developers?
+# How can I support developers?
 Star my GitHub repo ⭐
-Tweet about it.
 Create pull requests, submit bugs, suggest new features or documentation updates 🔧
 Buy me a coffee? https://ko-fi.com/thuanguyen
