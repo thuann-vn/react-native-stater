@@ -33,10 +33,4 @@ export default StyleSheet.create({
     marginBottom: 10,
     paddingLeft: 16,
   },
-  tab: {
-    backgroundColor: 'rgba(255,255,255,.9)',
-  },
-  tabIcon: {
-    color: Colors.black,
-  },
 })

@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }) => {
   const onLoginPress = async () => {
     try {
       await firebase.login({ email, password })
-      navigation.replace(Screens.MAIN)
+      navigation.replace(Screens.ON_BOARDING)
     } catch (ex) {
       Alert.alert(t('auth_login_failed'), t('auth_login_failed_message'))
     }

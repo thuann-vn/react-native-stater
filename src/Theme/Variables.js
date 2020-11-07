@@ -22,9 +22,20 @@ export const Colors = {
   placeholder: '#aaaaaa',
   separator: '#efefef',
   tabBarColor: '#057cff',
-  tabBarActiveColor: 'rgba(5, 124, 255, .1)'
+  tabBarActive: 'rgba(5, 124, 255, .1)',
+  tabarBackground: 'rgba(255,255,255,.9)',
+  tabIcon: '#000',
+  backgroundColor: '#fff',
 }
 
+export const DarkModeColors = {
+  ...Colors,
+  tabarBackground: '#080808',
+  backgroundColor: '#000',
+  tabBarInActive: '#fff',
+  tabIcon: '#aaaaaa',
+  text: '#fff',
+}
 /**
  * FontSize
  */
@@ -32,7 +43,7 @@ export const FontSize = {
   small: 12,
   regular: 14,
   large: 18,
-  xLarge: 24
+  xLarge: 24,
 }
 
 /**

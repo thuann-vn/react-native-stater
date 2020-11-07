@@ -113,7 +113,7 @@ const WelcomeScreen = ({ navigation }) => {
   }
 
   const _loginSuccess = () => {
-    navigation.replace(Screens.MAIN)
+    navigation.replace(Screens.ON_BOARDING)
   }
   return (
     <View style={[Layout.fill, Layout.rowCenter]}>

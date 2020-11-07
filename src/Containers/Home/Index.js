@@ -1,36 +1,48 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { View, ActivityIndicator, Text, TextInput, Button } from 'react-native'
-
-import { Brand } from '@/Components'
-import { Common, Fonts, Gutters, Layout } from '@/Theme'
-import auth from '@react-native-firebase/auth'
+import { View, Button } from 'react-native'
+import { AppleHeader } from '@freakycoder/react-native-header-view'
+import { Common, Gutters, Layout } from '@/Theme'
 // import FetchOne from '@/Store/User/FetchOne'
 import { useTranslation } from 'react-i18next'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { useTheme } from '@/Contexts/ThemeContext'
+import { Screen } from '@/Components'
+import moment from 'moment'
+import { useFirebase } from 'react-redux-firebase'
 
 const HomeContainer = () => {
-  const { t } = useTranslation()
-
-  const accounts = useSelector((state) => state.firebase.profile)
-  const dispatch = useDispatch()
+  const { colors, isDark, setScheme } = useTheme()
+  const profile = useSelector((state) => state.firebase.auth)
+  const firebase = useFirebase()
 
   return (
-    <View style={[Layout.fill, Layout.colCenter, Gutters.smallHPadding]}>
-      <View style={[[Layout.colCenter, Gutters.smallHPadding]]}>
-        <Brand />
-      </View>
-      <View
-        style={[
-          Layout.row,
-          Layout.rowHCenter,
-          Gutters.smallHPadding,
-          Gutters.largeVMargin,
-          Common.backgroundPrimary,
-        ]}
-      >
-        <Button title="Logout" onPress={()=> auth().signOut()}/>
-      </View>
-    </View>
+    <Screen>
+      <SafeAreaView style={Layout.fill}>
+        <AppleHeader
+          onChangeText={(text) => console.log(text)}
+          largeTitle={profile.displayName}
+          imageSource={{ uri: profile.photoURL }}
+          largeTitleFontColor={colors.text}
+          onPress={() => firebase.logout()}
+        />
+        <View
+          style={[
+            Layout.row,
+            Layout.rowHCenter,
+            Layout.justifyContentCenter,
+            Layout.fill,
+            Gutters.regularHPadding,
+            Gutters.regularVPadding,
+          ]}
+        >
+          <Button
+            title="Toggle Theme"
+            onPress={() => setScheme(isDark ? 'light' : 'dark')}
+          />
+        </View>
+      </SafeAreaView>
+    </Screen>
   )
 }
 

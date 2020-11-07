@@ -11,6 +11,8 @@ import { Colors } from './Theme'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
 import { enableScreens } from 'react-native-screens'
 import { PersistGate } from 'redux-persist/integration/react'
+import { AppearanceProvider } from 'react-native-appearance'
+import { ThemeProvider } from './Contexts/ThemeContext'
 enableScreens()
 const App = () => {
   return (
@@ -22,22 +24,24 @@ const App = () => {
        * for example `loading={<SplashScreen />}`.
        * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
        */}
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <ReactReduxFirebaseProvider {...rrfProps} >
-            <SafeAreaView style={Layout.fill}>
-              <NavigationContainer>
-                <StatusBar
-                  barStyle="dark-content"
-                  translucent={true}
-                  backgroundColor={Colors.transparent}
-                />
-                <ApplicationNavigator />
-              </NavigationContainer>
-            </SafeAreaView>
-          </ReactReduxFirebaseProvider>
-        </PersistGate>
-      </Provider>
+      <PersistGate loading={null} persistor={persistor}>
+        <ReactReduxFirebaseProvider {...rrfProps}>
+          <SafeAreaView style={Layout.fill}>
+            <AppearanceProvider>
+              <ThemeProvider>
+                <NavigationContainer>
+                  <StatusBar
+                    barStyle="dark-content"
+                    translucent={true}
+                    backgroundColor={Colors.transparent}
+                  />
+                  <ApplicationNavigator />
+                </NavigationContainer>
+              </ThemeProvider>
+            </AppearanceProvider>
+          </SafeAreaView>
+        </ReactReduxFirebaseProvider>
+      </PersistGate>
     </Provider>
   )
 }
