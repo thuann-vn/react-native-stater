@@ -1,0 +1,15 @@
+{
+  "description":
+    "This is to config VS Code to recongnise our aliases, ala https://medium.com/@justintulk/solve-module-import-aliasing-for-webpack-jest-and-vscode-74007ce4adc9",
+  "compilerOptions": {
+    // "target": "es6",
+    // "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "jsx": "react-native"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
