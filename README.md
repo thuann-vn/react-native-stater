@@ -4,7 +4,7 @@ React Native Starter with Firebase + Redux + React Navigation
 ![app-screen-showcase-mockup](https://user-images.githubusercontent.com/29191978/98446299-2877b980-214f-11eb-8809-45027a35db5c.png)
 
 # What's inside
-1. Clean and Clear Struction
+1. Clean and clear structure
 2. Firebase Auth and Database with Firebase Redux
 3. Pages: Login, Register, Forgot Password, On-Boarding
 4. Social Login: Facebook, Google, Apple, etc...
